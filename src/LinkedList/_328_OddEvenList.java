@@ -1,4 +1,4 @@
-package LinedList;
+package LinkedList;
 
 public class _328_OddEvenList {
     public ListNode oddEvenList(ListNode head) {

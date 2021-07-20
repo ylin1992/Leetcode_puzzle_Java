@@ -1,4 +1,6 @@
-package LinedList;
+package LinkedList;
+
+import LinkedList.ListNode;
 
 public class _24_SwapNodesInPairs {
     public ListNode swapPairs(ListNode head) {
