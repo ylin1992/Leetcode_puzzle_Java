@@ -22,7 +22,7 @@ public class _245_ShortestWordDistanceIII {
         while (i < list1.size() && j < list2.size()) {
             int idx1 = list1.get(i);
             int idx2 = list2.get(j);
-            if (idx1 == idx2 && word1 == word2) {
+            if (idx1 == idx2 && word1.equals(word2)) {
                 i++;
                 continue;
             }
@@ -37,6 +37,7 @@ public class _245_ShortestWordDistanceIII {
     }
 
     public static void main(String[] args) {
-
+        _245_ShortestWordDistanceIII swd = new _245_ShortestWordDistanceIII();
+        System.out.println(swd.shortestWordDistance(new String[]{"a","a","c","b"}, "a", "b"));
     }
 }
