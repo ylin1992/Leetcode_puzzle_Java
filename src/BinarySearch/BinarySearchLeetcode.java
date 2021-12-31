@@ -1,4 +1,4 @@
-package binarySearch;
+package BinarySearch;
 
 import java.util.Arrays;
 import java.util.HashSet;
