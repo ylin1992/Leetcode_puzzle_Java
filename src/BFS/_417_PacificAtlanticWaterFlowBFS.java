@@ -1,6 +1,6 @@
 package BFS;
 import java.util.*;
-public class _417_PacificAtlanticWaterFlow {
+public class _417_PacificAtlanticWaterFlowBFS {
     private int[][] DIRs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
     public List<List<Integer>> pacificAtlantic(int[][] heights) {
         int rows = heights.length;
@@ -60,7 +60,7 @@ public class _417_PacificAtlanticWaterFlow {
 
     public static void main(String[] args) {
         int[][] h = {{1,2,2,3,5}, {3,2,3,4,4}, {2,4,5,3,1},{6,7,1,4,5},{5,1,1,2,4}};
-        _417_PacificAtlanticWaterFlow pawt = new _417_PacificAtlanticWaterFlow();
+        _417_PacificAtlanticWaterFlowBFS pawt = new _417_PacificAtlanticWaterFlowBFS();
         List<List<Integer>> res =  pawt.pacificAtlantic(h);
         System.out.println();
     }
