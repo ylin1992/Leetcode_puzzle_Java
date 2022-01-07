@@ -14,7 +14,7 @@ public class _863_AllNodesDistanceKinBinaryTreeBFS {
 
         while (!q.isEmpty()) {
             if (k == 0) {
-                while(!q.isEmpty()) {
+                while (!q.isEmpty()) {
                     res.add(q.poll().val);
                 }
                 return res;
@@ -48,5 +48,4 @@ public class _863_AllNodesDistanceKinBinaryTreeBFS {
             buildGraph(graph, root.right, root);
         }
     }
-
 }
