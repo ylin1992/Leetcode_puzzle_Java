@@ -3,3 +3,5 @@ Leetcode1.iml
 out/
 .idea
 .DS_Store
+**/*.iml
+**/.DS_Store
