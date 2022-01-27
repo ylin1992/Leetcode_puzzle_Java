@@ -1,7 +1,7 @@
 package DynamicProgramming;
 import java.util.*;
 public class _139_WordBreakRecursive {
-    public boolean wordBreak(String s, List<String> wordDict) {
+    public boolean wordBreakRecursive(String s, List<String> wordDict) {
         HashSet<String> set = new HashSet<>(wordDict);
         HashMap<String, Boolean> map = new HashMap<>();
         return helper(s, set, map);
@@ -39,6 +39,7 @@ public class _139_WordBreakRecursive {
         List<String> list = new ArrayList<>();
         list.add("leet");
         list.add("code");
-        boolean res = wbs.wordBreak("leetcode", list);
+        boolean res = wbs.wordBreakRecursive("leetcode", list);
     }
+
 }
