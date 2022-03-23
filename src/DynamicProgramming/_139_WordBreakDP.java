@@ -2,6 +2,8 @@ package DynamicProgramming;
 import java.util.*;
 public class _139_WordBreakDP {
     public boolean wordBreak(String s, List<String> wordDict) {
+        // dp[i] means whether substring(0,i) can be segmented by words in the dict
+        // dp[i] = dp[j] && dict contains substring(j, i) for any j from 0 to i
         HashSet<String> set = new HashSet<>(wordDict);
         int n = s.length();
         boolean[] dp = new boolean[n+1];
