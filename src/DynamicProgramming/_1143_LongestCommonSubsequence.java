@@ -3,7 +3,7 @@ package DynamicProgramming;
 public class _1143_LongestCommonSubsequence {
    // "" a c e d
    // "" a b c d e
-   // dp[i,j] means given x.substring(0,i) and y.substring(0,j), dp[i,j] = longest common subsequance of the two substrings.
+   // dp[i,j] means given x.substring(0,i) and y.substring(0,j), dp[i,j] = longest common subsequence of the two substrings.
    // if x[i] == y[j]: dp[i,j] = dp[i-1, j-1] + 1, exclude the last element of both two substrings
    // if x[i] != y[j]: dp[i,j] = max(dp[i-1, j], dp[i, j-1]), exclude the last ele of one of the substrings
    // initialization:
