@@ -1,5 +1,7 @@
 package _Array;
-
+// [2,3,4,5]
+// left: [1,2,2*3,2*3*4]
+// right:[3*4*5,4*5,5,1]
 public class _238_ProductOfArrayExceptSelfOnSpace {
     public int[] productExceptSelf(int[] nums) {
         int[] prefix = new int[nums.length];
