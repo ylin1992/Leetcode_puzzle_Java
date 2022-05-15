@@ -1,43 +1,43 @@
 package BFS;
 import java.util.*;
+// [[1,0],[0,1]]
+// 0 -> 1
+// 1 -> 0
+// states[n], 0->unvisited, 1->visiting, 2->visited
+
+// dfs(adj, cur):
+// cur: visiting -> return false;
+// cur: visited -> return true;
+
+// mark cur as visiting
+// dfs()
+// mark cur as visited
 public class _207_CourseScheduleDFS {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        List<List<Integer>> graph = new ArrayList<>();
-
-        // initialize graph
-        for (int i = 0; i < numCourses; i++) {
-            graph.add(new ArrayList<>());
-        }
-
-        // append directional info into the graph
-        for (int[] pre : prerequisites) {
-            graph.get(pre[0]).add(pre[1]);
-        }
-
+        List<ArrayList<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < numCourses; i++) { adj.add(new ArrayList<>()); }
+        for (int[] pre : prerequisites) { adj.get(pre[0]).add(pre[1]); }
         int[] states = new int[numCourses];
-
         for (int i = 0; i < numCourses; i++) {
-            if (!dfs(i, graph, states)) return false;
+            boolean possible = dfs(adj, states, i);
+            if (!possible) return false;
         }
-
         return true;
     }
 
-    private boolean dfs(int cur, List<List<Integer>> graph, int[] states) {
-        // topological sort states:
-        // 0 = pending, 1 = visiting, 2 = visited
+    private boolean dfs(List<ArrayList<Integer>> adj, int[] states, int cur) {
+        if (states[cur] == 1) return false; // cycle found
+        if (states[cur] == 2) return true; // already visited
 
-        if (states[cur] == 1) return false;
-        if (states[cur] == 2) return true;
-
-        states[cur] = 1;
-        for (int i = 0; i < graph.get(cur).size(); i++) {
-            if (!dfs(graph.get(cur).get(i), graph, states)) {
-                return false;
-            }
+        states[cur] = 1; // mark it as visiting and do DFS starting from cur
+        for (int neighbor : adj.get(cur)) {
+            boolean res = dfs(adj, states, neighbor);
+            if (!res) return false;
         }
         states[cur] = 2;
         return true;
     }
+
+
 
 }
