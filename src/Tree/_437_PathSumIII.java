@@ -1,5 +1,18 @@
 package Tree;
 import java.util.*;
+
+// dfs + memoization
+// hashmap records how many times the summation has shown up
+// for example:
+//       10
+//    5      -3
+//  3   2       11
+// 3 -2   1
+
+// left side dsf
+// 10 -> map: 10
+// 5 -> map: 10, 15
+// 3 -> map: 10, 15, curSum = 15 + 3 = 18, and 18 - target = 8 is in the map, we increase count by map.get(8)
 public class _437_PathSumIII {
     class Count {
         private int count;
