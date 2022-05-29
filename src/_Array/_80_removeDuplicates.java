@@ -17,6 +17,17 @@ public class _80_removeDuplicates {
         return q;
     }
 
+    public int removeDuplicatesBetterSolution(int[] nums) {
+        int res = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i < 2 || nums[i] != nums[res-2]) {
+                nums[res++] = nums[i];
+            }
+        }
+        return res;
+    }
+
+
     public static void main(String[] args) {
         _80_removeDuplicates rd = new _80_removeDuplicates();
         System.out.println(rd.removeDuplicates(new int[]{1,1,1,2,2,3}));
