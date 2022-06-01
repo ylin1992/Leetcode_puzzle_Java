@@ -1,5 +1,10 @@
 package _String;
 
+/**
+ * Reverse the entire array
+ * and for each word separated by ' ', flip it again
+ * using two pointers
+ */
 public class _186_ReverseWordsInAStringII {
     public static char[] reverseWordsInAString(char[] ch) {
         reverseWord(ch, 0, ch.length - 1);
