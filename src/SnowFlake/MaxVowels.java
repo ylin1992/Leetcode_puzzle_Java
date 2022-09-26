@@ -1,4 +1,4 @@
-package OA.SnowFlake;
+package SnowFlake;
 
 // dp[i][j] means the number of ways we can make a distinct word with length i, where the last j characters are vowels
 // [cccccv] -> j = 0, i = 6

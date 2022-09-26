@@ -1,8 +1,6 @@
-package OA.SnowFlake;
+package SnowFlake;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-import java.util.Collections;
 
 // perfect pair:
 // min(|x-y|, |x+y|) <= min(|x|, |y|)

@@ -1,4 +1,4 @@
-package OA.SnowFlake;
+package SnowFlake;
 // n = words.length
 // m = words[0].length()
 // dp[i][j]: construct target[0:i] using word[0:j]

@@ -1,4 +1,4 @@
-package OA.SnowFlake;
+package SnowFlake;
 
 public class PathToAGoal {
    static int MOD = 1000000007;
