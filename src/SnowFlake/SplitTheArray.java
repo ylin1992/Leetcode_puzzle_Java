@@ -6,36 +6,21 @@ import java.util.List;
 
 // O(n^2) solution
 public class SplitTheArray {
-   static int MOD = (int) 1e9 +7;
-   public static int countWays(List<Integer> nums) {
-      int sum = 0;
-      int[] leftSum = new int[nums.size()];
-      int[] rightSum = new int[nums.size()];
-      leftSum[0] = nums.get(0);
-      rightSum[nums.size() - 1] = nums.get(nums.size() - 1);
-      for (int i = 1; i < nums.size(); i++) {
-         leftSum[i] = leftSum[i-1] + nums.get(i);
-      }
-      for (int i = nums.size() - 2; i >= 0; i--) {
-         rightSum[i] = rightSum[i+1] + nums.get(i);
-      }
-      for (int num : nums)
-         sum += num;
-
-      int res = 0;
-      for (int i = 0; i < nums.size() - 1; i++) {
-         int j = nums.size() - 1;
-         while (j > i + 1 && (leftSum[i] + rightSum[j] >= sum - leftSum[i] - rightSum[j])) {
-            j--;
-         }
-         j++;
-         res += ((nums.size() - j)) % MOD;
-         res %= MOD;
+   public static int waysToSplit(int[] nums) {
+      int sz = nums.length, res = 0;
+      for (int i = 1; i < sz; ++i)
+         nums[i] += nums[i - 1];
+      for (int i = 0, j = 0, k = 0; i < sz - 2; ++i) {
+         while (j <= i || (j < sz - 1 && nums[j] < nums[i] * 2))
+            ++j;
+         while (k < j || ( k < sz - 1 && nums[k] - nums[i] <= nums[sz - 1] - nums[k]))
+            ++k;
+         res = (res + k - j) % 1000000007;
       }
       return res;
    }
 
    public static void main(String[] args) {
-      System.out.println(countWays(Arrays.asList(new Integer[]{1,2,3,4})));
+      System.out.println(waysToSplit(new int[]{1,2,3,4}));
    }
 }
