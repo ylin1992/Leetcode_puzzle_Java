@@ -1,5 +1,7 @@
 package Sorting;
 
+import javax.lang.model.element.TypeElement;
+
 public class _334_IncreasingTripletSubsequence {
    /*
    Solution 1
@@ -34,6 +36,7 @@ public class _334_IncreasingTripletSubsequence {
       rightMax[nums.length-1] = nums[nums.length-1];
       // fill in leftMin
       for (int i = 1; i < nums.length; i++) {
+
          leftMin[i] = Math.min(nums[i], leftMin[i-1]);
       }
       // fill in rightMax
